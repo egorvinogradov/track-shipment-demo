@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Track shipment — Agistix</title>
+    <link rel="stylesheet" href="bower_components/lato/css/lato.min.css">
+    <link rel="stylesheet" href="bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/css/helper.css">
+    <link rel="stylesheet" href="bower_components/jquery.ui/themes/base/base.css">
+    <link rel="stylesheet" href="bower_components/jquery.ui/themes/base/tabs.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="app">
+
+    <div class="app__wrapper">
+
+        <header class="header">
+            <div class="header__container container">
+
+                <a class="header__logo" href="/">
+                    <img class="header__logo-img" src="img/logo@2x.png" alt="Agistix">
+                </a>
+
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a class="header__nav-link header__nav-link_login header__nav-button button button-blue" href="#">Log in</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+
+        <div class="content">
+            <div class="container">
+
+
+                <!-- Tracking form -->
+
+                <div class="track panel m-hidden-">
+
+                    <h2 class="track__heading">Track shipment</h2>
+
+                    <div class="track__content">
+
+                        <div class="track__number m-clearfix">
+                            <label class="track__number-label select">
+                                <select class="track__number-select select__element">
+                                    <option selected>Reference number</option>
+                                    <option>Pro number</option>
+                                    <option>Agistix shipment number</option>
+                                    <option>Bill of lading</option>
+                                </select>
+                                <i class="select__icon pe-7s-angle-down"></i>
+                            </label>
+                            <input class="track__number-input field" value="385404">
+                        </div>
+
+                        <div class="track__footer m-clearfix">
+                            <label class="track__footer-label">Ship date range</label>
+
+                            <span class="track__footer-input">
+                                <input class="track__date track__date-from field" value="Dec 25">
+                                <i class="track__footer-input-icon pe-7s-angle-down"></i>
+                            </span>
+                            <span class="track__footer-input">
+                                <input class="track__date track__date-to field" value="Jan 19">
+                                <i class="track__footer-input-icon pe-7s-angle-down"></i>
+                            </span>
+                            <button class="track__submit button button-blue">Track</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- / Tracking form -->
+
+
+                <!-- Search results -->
+
+                <div class="results m-hidden">
+
+                    <div class="results__header">
+                        <h1 class="results__header-title">
+                            Tracking shipment #385404
+                        </h1>
+                        <button class="results__header-button button">
+                            <i class="results__header-button-icon button__icon pe-7s-angle-left"></i>
+                            Track another shipment
+                        </button>
+                    </div>
+
+
+                    <div class="results__content panel">
+
+                        <div class="results__summary m-clearfix">
+                            <div class="results__summary-found">
+                                <i class="results__summary-found-icon pe-7s-mail"></i>
+                                3 shipments found
+                            </div>
+                            <div class="results__summary-search">
+                                <i class="results__summary-search-icon pe-7s-search"></i>
+                                <input class="results__summary-search-input field" type="search" placeholder="Instant search">
+                            </div>
+                        </div>
+
+                        <table class="results__table">
+
+                            <colgroup>
+                                <col width="15%">
+                                <col width="20%">
+                                <col width="18%">
+                                <col width="17%">
+                                <col width="13%">
+                                <col width="17%">
+                            </colgroup>
+
+                            <thead>
+                                <tr>
+                                    <th class="results__th">
+                                        <span class="results__th-title">
+                                            ID
+                                            <i class="results__th-title-icon pe-7s-angle-down"></i>
+                                        </span>
+                                    </th>
+                                    <th class="results__th">
+                                        <span class="results__th-title">
+                                            Shipper
+                                            <i class="results__th-title-icon pe-7s-angle-down"></i>
+                                        </span>
+                                    </th>
+                                    <th class="results__th">
+                                        <span class="results__th-title">
+                                            Consignee
+                                            <i class="results__th-title-icon pe-7s-angle-down"></i>
+                                        </span>
+                                    </th>
+                                    <th class="results__th">
+                                        <span class="results__th-title">
+                                            Tracking number
+                                            <i class="results__th-title-icon pe-7s-angle-down"></i>
+                                        </span>
+                                    </th>
+                                    <th class="results__th">
+                                        <span class="results__th-title">
+                                            Carrier
+                                            <i class="results__th-title-icon pe-7s-angle-down"></i>
+                                        </span>
+                                    </th>
+                                    <th class="results__th">
+                                        <span class="results__th-title">
+                                            Ship date
+                                            <i class="results__th-title-icon pe-7s-angle-down"></i>
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr class="results__row">
+                                    <td>323466</td>
+                                    <td>Main Street Depot</td>
+                                    <td>Customer A</td>
+                                    <td>Tre-1234</td>
+                                    <td>Abc Inc</td>
+                                    <td>Dec 14, 2014</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="results__item" colspan="6">
+                                        <div class="results__item-container">
+
+                                            <!-- Shipment -->
+
+                                            <div class="shipment">
+
+                                                <ul class="shipment__tabs">
+
+                                                    <h3 class="shipment__title">
+                                                        Shipment #323582
+                                                    </h3>
+
+                                                    <li class="shipment__tabs-item">
+                                                        <a class="shipment__tabs-inner" href="#transit">
+                                                            <i class="shipment__tabs-icon pe-7s-map"></i>
+                                                            Transit details
+                                                        </a>
+                                                    </li>
+                                                    <li class="shipment__tabs-item">
+                                                        <a class="shipment__tabs-inner" href="#info">
+                                                            <i class="shipment__tabs-icon pe-7s-file"></i>
+                                                            Shipment info
+                                                        </a>
+                                                    </li>
+                                                    <li class="shipment__tabs-item">
+                                                        <a class="shipment__tabs-inner" href="#contents">
+                                                            <i class="shipment__tabs-icon pe-7s-note2"></i>
+                                                            Shipment contents
+                                                        </a>
+                                                    </li>
+                                                </ul>
+
+                                                <!-- Transit details -->
+
+                                                <div class="shipment__tab shipment__tab_transit" id="transit">
+
+                                                    <table class="shipment__transit">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>Transit status</th>
+                                                                <th>ETA</th>
+                                                                <th>Location</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Jan 6, 2014 15:39</td>
+                                                                <td>Awaiting Pick-Up</td>
+                                                                <td>Dec 18, 2014 17:00</td>
+                                                                <td>
+                                                                    <a class="shipment__transit-map button" target="_blank" href="https://www.google.com/maps/place/Sunnyvale,+CA">
+                                                                        <i class="shipment__transit-map-icon button__icon pe-7s-map-marker"></i>
+                                                                        map
+                                                                    </a>
+                                                                    Sunnyvale, CA, USA
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Jan 5, 2014 07:02</td>
+                                                                <td>Shipment Received At Transit Point</td>
+                                                                <td>Dec 16, 2014 16:10</td>
+                                                                <td>
+                                                                    <a class="shipment__transit-map button" target="_blank" href="https://www.google.com/maps/place/Los+Angeles,+CA">
+                                                                        <i class="shipment__transit-map-icon button__icon pe-7s-map-marker"></i>
+                                                                        map
+                                                                    </a>
+                                                                    Los Angeles, CA, USA
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+
+                                                <!-- / Transit details -->
+
+                                                <!-- Shipment contents -->
+
+                                                <div class="shipment__tab shipment__tab_info" id="info">
+
+                                                    <dl class="shipment__info-list shipment__dl">
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Purchase order
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">385404</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Sales order
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">001163</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Bill of lading
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">22763</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Carrier
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">AAA Inc</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Delivery appt
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">Dec 18, 2014 17:00 PST</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Ship date
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">Dec 12, 2014</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Tracking number
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">TRE1234</dd>
+                                                    </dl>
+
+                                                    <div class="shipment__info-shipper">
+                                                        <h4 class="shipment__info-heading">Shipper</h4>
+                                                        Main Street Depot <br>
+                                                        123 main st <br>
+                                                        Sunnyvale, CA 94085 <br>
+                                                        US
+                                                    </div>
+                                                    <div class="shipment__info-consignee">
+                                                        <h4 class="shipment__info-heading">Consignee</h4>
+                                                        Customer A <br>
+                                                        1151 Buckeye Road <br>
+                                                        Venedocia, OH 45894 <br>
+                                                        US
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- / Shipment contents -->
+
+                                                <!-- Shipment info -->
+
+                                                <div class="shipment__tab shipment__tab_contents" id="contents">
+
+                                                    <dl class="shipment__contents-column shipment__dl">
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                BV Bicycle Light Set
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">2</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                EyezOff GP96 Bike Pump
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Kryptonite Bicycle U-Lock
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Schwinn Mountain Bike (26-Inch Wheels, Red)
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                    </dl>
+
+                                                    <dl class="shipment__contents-column shipment__dl">
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Bell Fraction Multi-Sport Helmet
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Mongoose Bike Knee and Elbow Pads
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">2</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                GoPro HERO
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Giro Bravo Cycling Gloves
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                    </dl>
+
+                                                    <i class="shipment__contents-column-placeholder"></i>
+
+                                                </div>
+
+                                                <!-- / Shipment info -->
+
+                                            </div>
+
+                                            <div class="shipment__footer">
+                                                <button class="shipment__collapse button button-blue">
+                                                    <i class="shipment__collapse-icon button__icon pe-7s-up-arrow"></i>
+                                                    Collapse
+                                                </button>
+                                            </div>
+
+                                            <!-- Shipment -->
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="results__row">
+                                    <td>323582</td>
+                                    <td>Main Street Depot</td>
+                                    <td>Electronics Master</td>
+                                    <td>Tre-45-77-98</td>
+                                    <td>Abc Inc</td>
+                                    <td>Dec 11, 2014</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="results__item" colspan="6">
+                                        <div class="results__item-container">
+
+                                            <!-- Shipment -->
+
+                                            <div class="shipment">
+
+                                                <ul class="shipment__tabs">
+
+                                                    <h3 class="shipment__title">
+                                                        Shipment #323582
+                                                    </h3>
+
+                                                    <li class="shipment__tabs-item">
+                                                        <a class="shipment__tabs-inner" href="#transit">
+                                                            <i class="shipment__tabs-icon pe-7s-map"></i>
+                                                            Transit details
+                                                        </a>
+                                                    </li>
+                                                    <li class="shipment__tabs-item">
+                                                        <a class="shipment__tabs-inner" href="#info">
+                                                            <i class="shipment__tabs-icon pe-7s-file"></i>
+                                                            Shipment info
+                                                        </a>
+                                                    </li>
+                                                    <li class="shipment__tabs-item">
+                                                        <a class="shipment__tabs-inner" href="#contents">
+                                                            <i class="shipment__tabs-icon pe-7s-note2"></i>
+                                                            Shipment contents
+                                                        </a>
+                                                    </li>
+                                                </ul>
+
+                                                <!-- Transit details -->
+
+                                                <div class="shipment__tab shipment__tab_transit" id="transit">
+
+                                                    <table class="shipment__transit">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>Transit status</th>
+                                                                <th>ETA</th>
+                                                                <th>Location</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Jan 6, 2014 15:39</td>
+                                                                <td>Awaiting Pick-Up</td>
+                                                                <td>Dec 18, 2014 17:00</td>
+                                                                <td>
+                                                                    <a class="shipment__transit-map button" target="_blank" href="https://www.google.com/maps/place/Sunnyvale,+CA">
+                                                                        <i class="shipment__transit-map-icon button__icon pe-7s-map-marker"></i>
+                                                                        map
+                                                                    </a>
+                                                                    Sunnyvale, CA, USA
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Jan 5, 2014 07:02</td>
+                                                                <td>Shipment Received At Transit Point</td>
+                                                                <td>Dec 16, 2014 16:10</td>
+                                                                <td>
+                                                                    <a class="shipment__transit-map button" target="_blank" href="https://www.google.com/maps/place/Los+Angeles,+CA">
+                                                                        <i class="shipment__transit-map-icon button__icon pe-7s-map-marker"></i>
+                                                                        map
+                                                                    </a>
+                                                                    Los Angeles, CA, USA
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+
+                                                <!-- / Transit details -->
+
+                                                <!-- Shipment contents -->
+
+                                                <div class="shipment__tab shipment__tab_info" id="info">
+
+                                                    <dl class="shipment__info-list shipment__dl">
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Purchase order
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">385404</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Sales order
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">001163</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Bill of lading
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">22763</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Carrier
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">AAA Inc</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Delivery appt
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">Dec 18, 2014 17:00 PST</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Ship date
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">Dec 12, 2014</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Tracking number
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">TRE1234</dd>
+                                                    </dl>
+
+                                                    <div class="shipment__info-shipper">
+                                                        <h4 class="shipment__info-heading">Shipper</h4>
+                                                        Main Street Depot <br>
+                                                        123 main st <br>
+                                                        Sunnyvale, CA 94085 <br>
+                                                        US
+                                                    </div>
+                                                    <div class="shipment__info-consignee">
+                                                        <h4 class="shipment__info-heading">Consignee</h4>
+                                                        Customer A <br>
+                                                        1151 Buckeye Road <br>
+                                                        Venedocia, OH 45894 <br>
+                                                        US
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- / Shipment contents -->
+
+                                                <!-- Shipment info -->
+
+                                                <div class="shipment__tab shipment__tab_contents" id="contents">
+
+                                                    <dl class="shipment__contents-column shipment__dl">
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                BV Bicycle Light Set
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">2</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                EyezOff GP96 Bike Pump
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Kryptonite Bicycle U-Lock
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Schwinn Mountain Bike (26-Inch Wheels, Red)
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                    </dl>
+
+                                                    <dl class="shipment__contents-column shipment__dl">
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Bell Fraction Multi-Sport Helmet
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Mongoose Bike Knee and Elbow Pads
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">2</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                GoPro HERO
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Giro Bravo Cycling Gloves
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                    </dl>
+
+                                                    <i class="shipment__contents-column-placeholder"></i>
+
+                                                </div>
+
+                                                <!-- / Shipment info -->
+
+                                            </div>
+
+                                            <div class="shipment__footer">
+                                                <button class="shipment__collapse button button-blue">
+                                                    <i class="shipment__collapse-icon button__icon pe-7s-up-arrow"></i>
+                                                    Collapse
+                                                </button>
+                                            </div>
+
+                                            <!-- Shipment -->
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="results__row">
+                                    <td>333945</td>
+                                    <td>Main Street Depot</td>
+                                    <td>Customer A</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Jan 25, 2015</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="results__item" colspan="6">
+                                        <div class="results__item-container">
+
+                                            <!-- Shipment -->
+
+                                            <div class="shipment">
+
+                                                <ul class="shipment__tabs">
+
+                                                    <h3 class="shipment__title">
+                                                        Shipment #323582
+                                                    </h3>
+
+                                                    <li class="shipment__tabs-item">
+                                                        <a class="shipment__tabs-inner" href="#transit">
+                                                            <i class="shipment__tabs-icon pe-7s-map"></i>
+                                                            Transit details
+                                                        </a>
+                                                    </li>
+                                                    <li class="shipment__tabs-item">
+                                                        <a class="shipment__tabs-inner" href="#info">
+                                                            <i class="shipment__tabs-icon pe-7s-file"></i>
+                                                            Shipment info
+                                                        </a>
+                                                    </li>
+                                                    <li class="shipment__tabs-item">
+                                                        <a class="shipment__tabs-inner" href="#contents">
+                                                            <i class="shipment__tabs-icon pe-7s-note2"></i>
+                                                            Shipment contents
+                                                        </a>
+                                                    </li>
+                                                </ul>
+
+                                                <!-- Transit details -->
+
+                                                <div class="shipment__tab shipment__tab_transit" id="transit">
+
+                                                    <table class="shipment__transit">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>Transit status</th>
+                                                                <th>ETA</th>
+                                                                <th>Location</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Jan 6, 2014 15:39</td>
+                                                                <td>Awaiting Pick-Up</td>
+                                                                <td>Dec 18, 2014 17:00</td>
+                                                                <td>
+                                                                    <a class="shipment__transit-map button" target="_blank" href="https://www.google.com/maps/place/Sunnyvale,+CA">
+                                                                        <i class="shipment__transit-map-icon button__icon pe-7s-map-marker"></i>
+                                                                        map
+                                                                    </a>
+                                                                    Sunnyvale, CA, USA
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Jan 5, 2014 07:02</td>
+                                                                <td>Shipment Received At Transit Point</td>
+                                                                <td>Dec 16, 2014 16:10</td>
+                                                                <td>
+                                                                    <a class="shipment__transit-map button" target="_blank" href="https://www.google.com/maps/place/Los+Angeles,+CA">
+                                                                        <i class="shipment__transit-map-icon button__icon pe-7s-map-marker"></i>
+                                                                        map
+                                                                    </a>
+                                                                    Los Angeles, CA, USA
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+
+                                                <!-- / Transit details -->
+
+                                                <!-- Shipment contents -->
+
+                                                <div class="shipment__tab shipment__tab_info" id="info">
+
+                                                    <dl class="shipment__info-list shipment__dl">
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Purchase order
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">385404</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Sales order
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">001163</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Bill of lading
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">22763</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Carrier
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">AAA Inc</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Delivery appt
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">Dec 18, 2014 17:00 PST</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Ship date
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">Dec 12, 2014</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Tracking number
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">TRE1234</dd>
+                                                    </dl>
+
+                                                    <div class="shipment__info-shipper">
+                                                        <h4 class="shipment__info-heading">Shipper</h4>
+                                                        Main Street Depot <br>
+                                                        123 main st <br>
+                                                        Sunnyvale, CA 94085 <br>
+                                                        US
+                                                    </div>
+                                                    <div class="shipment__info-consignee">
+                                                        <h4 class="shipment__info-heading">Consignee</h4>
+                                                        Customer A <br>
+                                                        1151 Buckeye Road <br>
+                                                        Venedocia, OH 45894 <br>
+                                                        US
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- / Shipment contents -->
+
+                                                <!-- Shipment info -->
+
+                                                <div class="shipment__tab shipment__tab_contents" id="contents">
+
+                                                    <dl class="shipment__contents-column shipment__dl">
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                BV Bicycle Light Set
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">2</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                EyezOff GP96 Bike Pump
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Kryptonite Bicycle U-Lock
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Schwinn Mountain Bike (26-Inch Wheels, Red)
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                    </dl>
+
+                                                    <dl class="shipment__contents-column shipment__dl">
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Bell Fraction Multi-Sport Helmet
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Mongoose Bike Knee and Elbow Pads
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">2</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                GoPro HERO
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                        <dt class="shipment__dt">
+                                                            <span class="shipment__dt-inner">
+                                                                Giro Bravo Cycling Gloves
+                                                            </span>
+                                                        </dt>
+                                                        <dd class="shipment__dd">1</dd>
+                                                    </dl>
+
+                                                    <i class="shipment__contents-column-placeholder"></i>
+
+                                                </div>
+
+                                                <!-- / Shipment info -->
+
+                                            </div>
+
+                                            <div class="shipment__footer">
+                                                <button class="shipment__collapse button button-blue">
+                                                    <i class="shipment__collapse-icon button__icon pe-7s-up-arrow"></i>
+                                                    Collapse
+                                                </button>
+                                            </div>
+
+                                            <!-- Shipment -->
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                        <div class="results__footer m-clearfix">
+
+                            <ul class="results__pagination">
+                                <li class="results__pagination-prev results__pagination-item button">
+                                    <i class="results__pagination-icon button__icon pe-7s-angle-left"></i>
+                                    Prev
+                                </li>
+                                <li class="results__pagination-item button m-active">
+                                    1
+                                </li>
+                                <li class="results__pagination-item button">
+                                    2
+                                </li>
+                                <li class="results__pagination-item button">
+                                    3
+                                </li>
+                                <li class="results__pagination-next results__pagination-item button">
+                                    Next
+                                    <i class="results__pagination-icon button__icon pe-7s-angle-right"></i>
+                                </li>
+                            </ul>
+
+                            <label class="results__records select">
+                                <select class="results__records-select select__element">
+                                    <option selected>All records</option>
+                                    <option>5 records/page</option>
+                                    <option>15 record/page</option>
+                                    <option>20 records/page</option>
+                                </select>
+                                <i class="select__icon pe-7s-angle-down"></i>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- / Search results -->
+
+            </div>
+        </div>
+
+
+        <footer class="footer container">
+            2015 © Agistix Inc.
+        </footer>
+
+    </div>
+
+
+    <!-- Login form -->
+
+    <div class="login">
+
+        <i class="login__bg"></i>
+
+        <div class="login__popup panel">
+
+            <i class="login__close pe-7s-close"></i>
+            <h3 class="login__title">Log in</h3>
+
+            <div class="login__content">
+
+                <div class="login__field">
+                    <i class="login__field-icon pe-7s-user"></i>
+                    <input class="login__field-input field" placeholder="Username">
+                </div>
+
+                <div class="login__field">
+                    <i class="login__field-icon pe-7s-key"></i>
+                    <input class="login__field-input field" type="password" placeholder="Password">
+                </div>
+
+                <div class="login__actions m-clearfix">
+                    <a class="login__forgot-password" href="#">Forgot password</a>
+                    <a class="login__register" href="#">Register</a>
+                </div>
+
+                <div class="login__submit">
+                    <button class="login__submit-button button button-blue">Sign in</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- / Login form -->
+
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery.ui/ui/core.js"></script>
+    <script src="bower_components/jquery.ui/ui/widget.js"></script>
+    <script src="bower_components/jquery.ui/ui/datepicker.js"></script>
+    <script src="bower_components/jquery.ui/ui/tabs.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        var app = new App('.app');
+        app.initialize();
+    </script>
+
+</body>
+</html>

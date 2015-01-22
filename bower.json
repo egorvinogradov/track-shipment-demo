@@ -1,0 +1,11 @@
+{
+    "name": "Agistix Tracker",
+    "version": "1.0.0",
+    "dependencies": {
+        "jquery": null,
+        "jquery.ui": null,
+        "underscore": null,
+        "pixeden-stroke-7-icon": null,
+        "lato": null
+    }
+}

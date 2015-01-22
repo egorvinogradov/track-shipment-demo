@@ -1,0 +1,801 @@
+@charset "utf-8"
+@import "mixins"
+
+
+// Vars
+
+$font-default: 15px/22px Lato, Helvetica, Arial, sans-serif
+
+$color-bg: #eff3f8
+$color-font: #444d58
+$color-font-gray: #afb4bb
+$color-font-white: #fff
+
+$color-input: #ebedf0
+$color-button: #97a3b5
+$color-button-blue: #0096ca
+
+$color-line: #edeff2
+$color-line-button: darken($color-button, 7)
+
+$color-table-row: #f6f7f9
+
+$color-link: #0096ca
+$color-link-hover: #047096
+
+
+// Reset
+
+html, body, button, input, textarea, h1, h2, h3, h4, h5, h6, p, ul, li, table, th, td, dl, dt, dd
+    padding: 0
+    margin: 0
+
+table
+    border-collapse: collapse
+
+th
+    text-align: left
+
+button, input, textarea, select, option
+    font: $font-default
+
+ul, ol, li
+    list-style: none
+
+a, .link
+    color: $color-link
+    text-decoration: none
+    cursor: pointer
+    &:hover
+        color: $color-link-hover
+
+
+// Common
+
+body
+    overflow-y: scroll
+    color: $color-font
+    font: $font-default
+    background: $color-bg
+
+.m-hidden
+    display: none
+
+.m-clearfix
+    &:after
+        content: ""
+        clear: both
+        display: table
+        height: 1px
+
+.m-nw
+    white-space: nowrap
+
+.container
+    width: 960px
+    margin-left: auto
+    margin-right: auto
+
+.button
+    background: $color-button
+    color: $color-font-white
+    display: block
+    cursor: pointer
+    height: 35px
+    line-height: 35px
+    padding: 0 12px
+    border: 0
+    border-radius: 3px
+    text-align: center
+    @include transition(background, 100ms)
+
+    &:hover
+        background: darken($color-button, 7)
+        color: $color-font-white
+
+    &:active
+        background: darken($color-button, 12)
+        outline: none
+
+    &:focus
+        outline: none
+
+.button-blue
+    font-weight: bold
+    background: $color-button-blue
+
+    &:hover
+        background: darken($color-button-blue, 7)
+
+    &:active
+        background: darken($color-button-blue, 12)
+        outline: none
+
+.button__icon
+    font-size: 25px
+    display: inline-block
+    vertical-align: middle
+    padding: 0 5px
+
+.button_disabled
+    background: #ffffff
+    background: lighten($color-button, 20)
+    pointer-events: none
+
+.field
+    background: $color-input
+    color: $color-font
+    display: inline-block
+    height: 35px
+    line-height: 35px
+    padding: 0 12px
+    box-sizing: border-box
+    border: 0
+    border-radius: 3px
+    @include transition(background, 100ms)
+
+    &:hover
+        background: darken($color-input, 3)
+
+    &:focus
+        background: darken($color-input, 7)
+        outline: none
+
+.select
+    display: inline-block
+    position: relative
+    height: 35px
+    overflow: hidden
+    padding: 0 5px
+    border-radius: 3px
+    background: $color-button
+    box-sizing: border-box
+
+    &:hover
+        background: darken($color-button, 7)
+
+    &:active
+        background: darken($color-button, 12)
+
+.select__element
+    background: transparent
+    border: none
+    height: 100%
+    padding: 5px
+    width: calc(100% + 30px)
+    color: $color-font-white
+    cursor: pointer
+
+    &:focus
+        outline: none
+
+.select__icon
+    position: absolute
+    top: 50%
+    right: 0
+    padding: 0 12px 0 10px
+    font-size: 25px
+    line-height: 25px
+    margin-top: -12px
+    background: $color-button
+    color: $color-font-white
+
+.select:hover .select__icon
+    background: darken($color-button, 7)
+
+.select:active .select__icon
+    background: darken($color-button, 12)
+
+.panel
+    background: #ffffff
+    border-radius: 3px
+    box-shadow: 0 2px 3px rgba(0,0,0,.07)
+
+
+// Header
+
+.header
+    background: $color-font
+    height: 70px
+
+.header__container
+    position: relative
+
+.header__logo
+    top: 23px
+    position: absolute
+
+.header__logo-img
+    width: 125px
+
+.header__nav
+    position: absolute
+    right: 0
+    top: 20px
+
+.header__nav-item
+    display: inline-block
+
+.header__nav-link
+    font-weight: bold
+    line-height: 30px
+    margin-left: 28px
+    color: $color-font-white
+    @include transition(color, 100ms)
+    &:hover
+        color: darken($color-font-white, 10)
+
+.header__nav-button
+    height: 30px
+    padding: 0 15px
+    @include transition(background, 100ms)
+    &:hover
+        color: $color-font-white
+
+
+// Footer
+
+.footer
+    text-align: center
+    color: $color-font-gray
+    padding: 35px 0 80px 0
+    font-size: 14px
+
+
+// Tracking form
+
+.track
+    margin: 110px auto 65px auto
+    width: 480px
+    box-sizing: border-box
+    opacity: 1
+    @include transition(all, 300ms)
+
+    &.m-animated
+        @include transform(translate(382px, -170px) scale(.4))
+        opacity: 0
+
+.track__heading
+    text-transform: uppercase
+    text-align: center
+    line-height: 70px
+    padding-top: 4px
+    font-size: 16px
+    border-bottom: 1px solid $color-line
+
+.track__content
+    padding: 42px 55px 44px 55px
+
+.track__number
+    padding-bottom: 22px
+
+.track__number-label
+    float: left
+    width: 50%
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+
+.track__number-select
+    font-size: 16px
+
+.track__number-input
+    width: 50%
+    font-size: 16px
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+
+.track__footer-label
+    display: block
+    padding-bottom: 7px
+
+.track__footer-input
+    position: relative
+    width: 25%
+    float: left
+
+.track__date
+    width: 100%
+    padding: 0 13px
+    background: $color-button
+    color: $color-font-white
+    cursor: pointer
+
+    &:hover
+        background: darken($color-button, 7)
+        color: $color-font-white
+
+    &:focus,
+    &:active
+        background: darken($color-button, 12)
+
+.track__date-from
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+    border-right: 1px solid $color-line-button
+
+.track__date-to
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+
+.track__footer-input-icon
+    position: absolute
+    font-size: 25px
+    line-height: 25px
+    right: 12px
+    top: 50%
+    margin-top: -12px
+    pointer-events: none
+    color: $color-font-white
+
+.track__submit
+    float: right
+    width: 35%
+
+
+// Datepicker
+
+.ui-datepicker
+    border-radius: 3px
+    background: #fff
+    box-shadow: 0 4px 4px rgba(0,0,0,.1)
+
+    .ui-state-active
+        background: $color-input
+        border-radius: 3px
+
+    .ui-state-default
+        text-align: center
+
+    .ui-datepicker-header
+        position: relative
+
+    .ui-datepicker-prev,
+    .ui-datepicker-next
+        position: absolute
+        display: inline-block
+        font-family: "Pe-icon-7-stroke"
+        top: 2px !important
+
+        &:after
+            position: absolute
+            width: 100%
+            height: 100%
+            text-align: center
+            line-height: 32px
+            font-size: 25px
+            height: 27px
+            overflow: hidden
+
+    .ui-datepicker-prev
+        left: 0 !important
+        &:after
+            content: "\e686"
+
+    .ui-datepicker-next
+        right: 0 !important
+        &:after
+            content: "\e684"
+
+
+// Results
+
+.results__header
+    height: 110px
+    position: relative
+
+.results__header-title
+    font-size: 32px
+    line-height: 32px
+    padding-top: 39px
+    font-weight: 300
+
+.results__header-button
+    position: absolute
+    right: 0
+    top: 36px
+    height: 40px
+    line-height: 40px
+    font-size: 16px
+    padding: 0 20px 0 15px
+
+.results__header-button-icon
+    padding-right: 10px
+    position: relative
+    top: -1px
+
+.results__summary
+    padding: 25px 25px 24px 25px
+    border-bottom: 1px solid $color-line
+
+.results__summary-found
+    line-height: 35px
+    float: left
+
+.results__summary-found-icon
+    font-size: 20px
+    padding-right: 8px
+    vertical-align: text-top
+
+.results__summary-search
+    position: relative
+    float: right
+
+.results__summary-search-icon
+    color: $color-font-gray
+    position: absolute
+    left: 12px
+    top: 5px
+    font-size: 19px
+    line-height: 25px
+
+.results__summary-search-input
+    padding-left: 30px
+    width: 275px
+
+
+// Table
+
+.results__table
+    width: 100%
+    line-height: 40px
+
+    > tbody > tr > td:not([colspan])
+        cursor: pointer
+
+    > thead > tr > th:first-child,
+    > tbody > tr > td:first-child
+        padding-left: 25px
+
+    > tbody > tr:nth-child(4n + 1) > td
+        background: $color-table-row
+
+.results__th-title
+    cursor: pointer
+
+.results__th-title-icon
+    font-size: 20px
+    vertical-align: text-top
+    padding-left: 6px
+
+.results__item-container
+    height: 0
+    overflow: hidden
+    position: relative
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05), inset 0 2px 1px rgba(0,0,0,.03)
+    border-style: solid
+    border-top-color: #dee0e3
+    border-bottom-color: #e5e7ea
+    border-width: 0
+    @include transition(height, 250ms)
+
+.results__item
+    padding: 0 !important
+
+    &.m-active
+        .results__item-container
+            height: 354px // TODO: set by JS
+            border-width: 1px 0
+
+            .shipment__collapse
+                background: $color-button-blue
+
+
+// Shipment
+
+.shipment
+    line-height: 22px
+    padding: 25px
+    position: relative
+
+.shipment__title
+    text-transform: uppercase
+    position: absolute
+    line-height: 40px
+    top: 0
+    left: 0
+    font-size: 16px
+
+.shipment__tabs
+    position: relative
+    text-align: right
+    padding: 0 22px !important
+
+    &:before
+        content: ""
+        width: 100%
+        position: absolute
+        border-bottom: 1px solid #d9dbdf
+        height: 10px
+        z-index: 1
+        bottom: 0
+        left: 0
+
+.shipment__tabs-item
+    border: 1px solid transparent
+    border-radius: 3px 3px 0 0
+    position: relative
+    z-index: 2
+    display: inline-block
+    vertical-align: top
+    float: none !important
+    margin: 0 !important
+
+    &.ui-state-active
+        border-color: #d9dbdf
+        margin-bottom: 0 !important
+        padding-bottom: 0 !important
+        background: #ffffff
+
+.shipment__tabs-inner
+    padding: 0 24px !important
+    line-height: 40px
+    color: $color-font
+
+    &:hover
+        color: $color-font
+
+    &:focus
+        outline: none
+
+.shipment__tabs-icon
+    font-size: 18px
+    padding-right: 5px
+    vertical-align: text-top
+
+.shipment__tab
+    padding: 20px 0 !important
+
+.shipment__footer
+    text-align: right
+    position: absolute
+    bottom: 0
+    width: 100%
+    padding: 23px 25px
+    box-sizing: border-box
+
+.shipment__collapse
+    width: 153px
+    display: inline-block
+    background: transparent
+    @include transition(background, 150ms)
+
+.shipment__collapse-icon
+    font-size: 20px
+    margin: -3px 1px 0 -8px
+
+.shipment__dt,
+.shipment__dd
+    display: inline-block
+    vertical-align: top
+    width: 48%
+    line-height: 27px
+
+.shipment__dt
+    position: relative
+    &:after
+        content: ""
+        display: block
+        position: absolute
+        bottom: 7px
+        width: 100%
+        border-bottom: 2px dotted $color-line
+
+.shipment__dt-inner
+    background: white
+    display: inline-block
+    position: relative
+    z-index: 2
+    padding-right: 3px
+
+
+// Transit details
+
+.shipment__tab_transit
+    padding-bottom: 40px !important
+
+.shipment__transit
+    width: 100%
+
+    td
+        border-top: 1px solid $color-line
+
+    td:first-child,
+    th:first-child
+        padding-left: 23px
+
+    td, th
+        line-height: 40px
+
+    tr:nth-child(2n + 1) td
+        background: $color-table-row
+
+.shipment__transit-map
+    display: inline-block
+    font-size: 13px
+    height: 23px
+    line-height: 23px
+    padding: 0 0 0 3px
+    width: 51px
+    margin-right: 10px
+    vertical-align: baseline
+    position: relative
+    top: -1px
+    text-align: left
+
+.shipment__transit-map-icon
+    padding-right: 2px
+    font-size: 13px
+    line-height: 23px
+    vertical-align: middle
+
+
+// Shipment info
+
+.shipment__info-list,
+.shipment__info-shipper,
+.shipment__info-consignee
+    display: inline-block
+    vertical-align: top
+
+.shipment__info-heading
+    text-transform: uppercase
+    padding-bottom: 12px
+
+.shipment__info-list
+    width: 40%
+    margin-right: 5%
+
+.shipment__info-shipper
+    width: 25%
+
+
+// Shipment contents
+
+.shipment__tab_contents
+    text-align: justify
+
+.shipment__contents-column
+    text-align: left
+    width: 49%
+    display: inline-block
+    vertical-align: top
+
+    .shipment__dt
+        width: 88.5%
+
+    .shipment__dd
+        width: 10%
+
+.shipment__contents-column-placeholder
+    display: inline-block
+    width: 80%
+    height: 1px
+    overflow: hidden
+
+
+// Results footer
+
+.results__footer
+    padding: 24px 25px 25px 25px
+
+.results__pagination
+    float: left
+
+.results__pagination-item
+    float: left
+    border-radius: 0
+    border-right: 1px solid $color-line-button
+
+    &.m-active
+        pointer-events: none
+        background: darken($color-line-button, 0)
+
+.results__pagination-prev
+    border-radius: 3px 0 0 3px
+    padding-left: 7px
+
+.results__pagination-next
+    border-radius: 0 3px 3px 0
+    border-right: 0
+    padding-right: 7px
+
+.results__records
+    float: right
+    width: 153px
+
+
+
+
+// Login
+
+.login
+    display: none
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    z-index: 10
+
+.login__bg
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background: $color-font
+    opacity: .3
+
+.login__popup
+    position: absolute
+    width: 490px
+    box-sizing: border-box
+    top: 50%
+    left: 50%
+    margin: -170px 0 0 -245px
+    box-shadow: 0 8px 9px 1px rgba(0, 0, 0, 0.2)
+
+.login__close
+    position: absolute
+    top: 16px
+    right: 21px
+    font-size: 30px
+    line-height: 30px
+    cursor: pointer
+
+.login__title
+    border-bottom: 1px solid $color-line
+    text-transform: uppercase
+    text-align: center
+    line-height: 70px
+    padding-top: 4px
+    font-size: 16px
+
+.login__content
+    padding: 45px 55px 48px 55px
+
+.login__field
+    position: relative
+    margin-bottom: 17px
+    &:first-child
+        margin-bottom: 27px
+
+.login__field-input
+    width: 100%
+    padding-left: 34px
+
+.login__field-icon
+    position: absolute
+    font-size: 20px
+    color: $color-font-gray
+    top: 7px
+    left: 8px
+    width: 20px
+    text-align: center
+
+.login__actions
+    padding-bottom: 27px
+
+.login__forgot-password
+    float: left
+
+.login__register
+    float: right
+
+.login__submit
+    text-align: center
+
+.login__submit-button
+    padding: 0 35px
+    display: inline-block
+
+
+.m-login
+
+    .login
+        display: block
+
+    .app__wrapper
+        -webkit-filter: blur(2px)
+
+
